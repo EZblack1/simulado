@@ -1,0 +1,14 @@
+.option.correct .option-letter{background:var(--green);border-color:var(--green);color:#102319}
+.option.wrong .option-letter{background:var(--pink);border-color:var(--pink);color:#27101b}
+.answer-feedback{margin-top:18px;padding:16px 18px;border-radius:9px;border:1px solid;animation:feedbackIn .25s ease-out}
+.feedback-correct{border-color:#75e5a255;background:#75e5a20b}
+.feedback-wrong{border-color:#fb5fa455;background:#fb5fa40b}
+.feedback-title{display:flex;align-items:center;gap:10px}
+.feedback-title span{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-weight:800}
+.feedback-correct .feedback-title{color:var(--green)}
+.feedback-correct .feedback-title span{background:#75e5a21c}
+.feedback-wrong .feedback-title{color:var(--pink)}
+.feedback-wrong .feedback-title span{background:#fb5fa41c}
+.answer-feedback p{margin:9px 0 0;color:var(--muted);font-size:12px;line-height:1.65}
+.answer-feedback b{color:var(--text)}
+@keyframes feedbackIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
