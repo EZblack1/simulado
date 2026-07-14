@@ -11,4 +11,9 @@
 .feedback-wrong .feedback-title span{background:#fb5fa41c}
 .answer-feedback p{margin:9px 0 0;color:var(--muted);font-size:12px;line-height:1.65}
 .answer-feedback b{color:var(--text)}
+.correct-answer-line,.why-answer{display:flex;flex-direction:column;gap:5px;margin-top:13px}
+.correct-answer-line{padding:11px 13px;border-radius:7px;background:#00000012}
+.correct-answer-line small,.why-answer small{font:500 9px 'DM Mono';letter-spacing:.12em;color:var(--muted)}
+.correct-answer-line b{font-size:12px;line-height:1.5}
+.why-answer p{margin-top:2px}
 @keyframes feedbackIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
