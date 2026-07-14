@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161b33">
+  <title>DevSimulado — Front-End</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Início"><span class="brand-mark">&lt;/&gt;</span><span>Dev<span>Simulado</span></span></a>
+    <div class="top-actions">
+      <div class="timer" aria-label="Tempo decorrido"><span class="pulse"></span><span id="timer">00:00:00</span></div>
+      <button class="icon-button" id="themeBtn" aria-label="Alternar tema">☼</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="welcome" class="screen welcome-screen active">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> PREPARAÇÃO FRONT-END</div>
+        <h1>Teste seus<br>conhecimentos.<br><em>Supere seus limites.</em></h1>
+        <p>Um simulado completo, do HTML ao React e APIs. Responda no seu ritmo, acompanhe seu desempenho e descubra onde evoluir.</p>
+        <div class="hero-actions">
+          <button class="primary-button" id="startBtn">Iniciar simulado <span>→</span></button>
+          <button class="text-button" id="resumeBtn" hidden>Continuar de onde parei</button>
+        </div>
+        <div class="stats-row">
+          <div><strong>80</strong><span>questões</span></div>
+          <div><strong>4</strong><span>blocos</span></div>
+          <div><strong>100</strong><span>pontos</span></div>
+          <div><strong>∞</strong><span>sem limite</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="code-card">
+          <div class="card-dots"><i></i><i></i><i></i></div>
+          <pre><span class="muted">01</span>  <span class="pink">const</span> <span class="cyan">desafio</span> = {
+<span class="muted">02</span>    foco: <span class="green">true</span>,
+<span class="muted">03</span>    nivel: <span class="yellow">"próximo"</span>,
+<span class="muted">04</span>    concluir() {
+<span class="muted">05</span>      <span class="pink">return</span> <span class="yellow">"evolução"</span>;
+<span class="muted">06</span>    }
+<span class="muted">07</span>  };</pre>
+        </div>
+        <div class="floating-tag tag-html">HTML5</div><div class="floating-tag tag-react">React</div><div class="floating-tag tag-api">API</div>
+      </div>
+    </section>
+
+    <section id="quiz" class="screen quiz-screen">
+      <aside class="sidebar">
+        <div class="side-title">Seu progresso</div>
+        <div class="progress-ring" id="progressRing"><div><strong id="progressPercent">0%</strong><span>concluído</span></div></div>
+        <div id="blockList" class="block-list"></div>
+        <button class="secondary-button" id="finishBtn">Finalizar simulado</button>
+      </aside>
+      <div class="quiz-content">
+        <div class="quiz-head">
+          <div><span class="block-kicker" id="blockKicker"></span><h2 id="blockTitle"></h2></div>
+          <button class="review-toggle" id="reviewBtn">☆ Marcar para revisão</button>
+        </div>
+        <div class="question-card" id="questionCard"></div>
+        <div class="quiz-nav">
+          <button class="nav-button" id="prevBtn">← Anterior</button>
+          <div class="question-count"><strong id="currentNum">1</strong> / 80</div>
+          <button class="nav-button next" id="nextBtn">Próxima →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="screen results-screen">
+      <div class="results-hero">
+        <span class="eyebrow centered"><span></span> RESULTADO FINAL <span></span></span>
+        <h2 id="resultMessage">Mandou bem!</h2>
+        <p>Seu resultado mostra onde você já domina e onde vale concentrar a próxima revisão.</p>
+        <div class="score-wrap"><div class="score-ring" id="scoreRing"><div><strong id="scoreValue">0</strong><span>/ 100 pontos</span></div></div></div>
+      </div>
+      <div class="result-grid" id="resultBlocks"></div>
+      <div class="result-actions">
+        <button class="primary-button" id="reviewErrorsBtn">Revisar respostas <span>→</span></button>
+        <button class="secondary-button" id="restartBtn">Refazer simulado</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="confirmDialog">
+    <div class="dialog-icon">✓</div><h3>Finalizar simulado?</h3>
+    <p id="dialogText">Você ainda tem questões sem resposta.</p>
+    <div><button class="secondary-button" id="cancelFinish">Continuar respondendo</button><button class="primary-button" id="confirmFinish">Finalizar</button></div>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
